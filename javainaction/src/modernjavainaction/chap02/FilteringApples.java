@@ -17,6 +17,7 @@ public class FilteringApples {
 
         List<Apple> heavyApples = filterApples(inventory, new AppleHeavyWeightPredicate());
         List<Apple> greenApples2 = filterApples(inventory, new AppleGreenColorPredicate());
+        List<Apple> redApples2 = filterApples(inventory, apple -> Color.RED.equals(apple.getColor()));
     }
 
     public static List<Apple> filterGreenApples(List<Apple> inventory) {

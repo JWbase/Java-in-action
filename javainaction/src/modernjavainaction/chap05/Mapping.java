@@ -46,8 +46,7 @@ public class Mapping {
         List<Integer> numbers2 = Arrays.asList(3, 4);
         List<int[]> collect = numbers1.stream()
                 .flatMap(i -> numbers2.stream()
-                        .map(j -> new int[]{i, j}))
-                .collect(toList());
+                        .map(j -> new int[]{i, j})).collect(toList());
 
         collect.forEach(i -> System.out.println(Arrays.toString(i)));
 

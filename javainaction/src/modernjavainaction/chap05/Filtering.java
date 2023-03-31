@@ -40,7 +40,7 @@ public class Filtering {
                 .collect(toList());
         filteredMenu.forEach(System.out::println);
 
-        //filter와 달리 각각의 조건에 대해 참이아니면 바로 다음 스트림으로 넘어간다.
+        //filter와 달리 각각의 조건에 대해 참이아니면 그 자리에서 멈춘다.
         System.out.println("takeWhile 사용");
         List<Dish> sliceMenu1 = specialMenu.stream()
                 .takeWhile(dish -> dish.getCalories() < 320)
@@ -68,11 +68,13 @@ public class Filtering {
                 .skip(2)
                 .collect(toList());
 
-        System.out.println("처음 등장하는 고기 두개 건너뛰고 반환");
+        System.out.println("처음 등장하는 고기만 반환");
         List<Dish> skipMeat = specialMenu.stream()
                 .filter(d -> d.getType() == Dish.Type.MEAT)
                 .limit(2)
                 .collect(toList());
+
+
     }
 
 }

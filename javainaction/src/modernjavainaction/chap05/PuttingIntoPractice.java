@@ -71,6 +71,11 @@ public class PuttingIntoPractice {
                 .reduce((t1, t2) -> t1.getValue() < t2.getValue() ? t1 : t2);
         System.out.println("min = " + min);
 
+        Optional<Integer> reduceMin = transactions.stream()
+                .map(transaction -> transaction.getValue())
+                .reduce(Integer::min);
+        System.out.println("reduceMin = " + reduceMin);
+
 
     }
 }
